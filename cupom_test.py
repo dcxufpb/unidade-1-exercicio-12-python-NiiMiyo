@@ -63,16 +63,16 @@ def test_valida_nome():
 
 
 ENDERECO_LOGRADOURO_NULO = cupom.Endereco(None, NUMERO, COMPLEMENTO, BAIRRO,
-                                   MUNICIPIO, ESTADO, CEP)
+                                          MUNICIPIO, ESTADO, CEP)
 
-LOJA_LOGRADOURO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_LOGRADOURO_NULO, 
-                                  TELEFONE, OBSERVACAO, CNPJ, 
+LOJA_LOGRADOURO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_LOGRADOURO_NULO,
+                                  TELEFONE, OBSERVACAO, CNPJ,
                                   INSCRICAO_ESTADUAL)
 
 ENDERECO_LOGRADOURO_VAZIO = cupom.Endereco("", NUMERO, COMPLEMENTO, BAIRRO,
-                                   MUNICIPIO, ESTADO, CEP)
+                                           MUNICIPIO, ESTADO, CEP)
 LOJA_LOGRADOURO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_LOGRADOURO_VAZIO,
-                                   TELEFONE, OBSERVACAO, CNPJ, 
+                                   TELEFONE, OBSERVACAO, CNPJ,
                                    INSCRICAO_ESTADUAL)
 
 MENSAGEM_LOGRADOURO_OBRIGATORIO = "O campo logradouro do endereço é obrigatório"
@@ -83,6 +83,7 @@ def test_valida_logradouro():
                                       LOJA_LOGRADOURO_NULO)
     verifica_campo_obrigatorio_objeto(MENSAGEM_LOGRADOURO_OBRIGATORIO,
                                       LOJA_LOGRADOURO_VAZIO)
+
 
 ENDERECO_NUMERO_ZERO = cupom.Endereco(LOGRADOURO, 0, COMPLEMENTO, BAIRRO,
                                       MUNICIPIO, ESTADO, CEP)
@@ -121,15 +122,15 @@ def test_valida_numero():
 ENDERECO_COMPLEMENTO_NULO = cupom.Endereco(LOGRADOURO, NUMERO, None, BAIRRO,
                                            MUNICIPIO, ESTADO, CEP)
 
-LOJA_COMPLEMENTO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLEMENTO_NULO, 
-                                   TELEFONE, OBSERVACAO, CNPJ, 
+LOJA_COMPLEMENTO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLEMENTO_NULO,
+                                   TELEFONE, OBSERVACAO, CNPJ,
                                    INSCRICAO_ESTADUAL)
 
 ENDERECO_COMPLEMENTO_VAZIO = cupom.Endereco(LOGRADOURO, NUMERO, "", BAIRRO,
                                             MUNICIPIO, ESTADO, CEP)
 
-LOJA_COMPLEMENTO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLEMENTO_VAZIO, 
-                                    TELEFONE, OBSERVACAO, CNPJ, 
+LOJA_COMPLEMENTO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLEMENTO_VAZIO,
+                                    TELEFONE, OBSERVACAO, CNPJ,
                                     INSCRICAO_ESTADUAL)
 
 TEXTO_ESPERADO_SEM_COMPLEMENTO = """Loja 1
@@ -151,13 +152,13 @@ def test_valida_complemento():
 ENDERECO_BAIRRO_NULO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO, None,
                                       MUNICIPIO, ESTADO, CEP)
 
-LOJA_BAIRRO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_BAIRRO_NULO, TELEFONE, 
+LOJA_BAIRRO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_BAIRRO_NULO, TELEFONE,
                               OBSERVACAO, CNPJ, INSCRICAO_ESTADUAL)
 
 ENDERECO_BAIRRO_VAZIO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO, "",
                                        MUNICIPIO, ESTADO, CEP)
 
-LOJA_BAIRRO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_BAIRRO_VAZIO, TELEFONE, 
+LOJA_BAIRRO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_BAIRRO_VAZIO, TELEFONE,
                                OBSERVACAO, CNPJ, INSCRICAO_ESTADUAL)
 
 TEXTO_ESPERADO_SEM_BAIRRO = """Loja 1
@@ -176,18 +177,19 @@ def test_valida_bairro():
             == TEXTO_ESPERADO_SEM_BAIRRO)
 
 
-ENDERECO_MUNICIPIO_NULO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO, 
+ENDERECO_MUNICIPIO_NULO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO,
                                          BAIRRO, None, ESTADO, CEP)
 
 LOJA_MUNICIPIO_NULO = cupom.Loja(NOME_LOJA, ENDERECO_MUNICIPIO_NULO, TELEFONE,
                                  OBSERVACAO, CNPJ, INSCRICAO_ESTADUAL)
 
-ENDERECO_MUNICIPIO_VAZIO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO, 
+ENDERECO_MUNICIPIO_VAZIO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO,
                                           BAIRRO, "", ESTADO, CEP)
 
-LOJA_MUNICIPIO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_MUNICIPIO_VAZIO, 
-                                  TELEFONE, OBSERVACAO, CNPJ, 
+LOJA_MUNICIPIO_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_MUNICIPIO_VAZIO,
+                                  TELEFONE, OBSERVACAO, CNPJ,
                                   INSCRICAO_ESTADUAL)
+
 
 def test_valida_municipio():
     verifica_campo_obrigatorio_objeto(
@@ -223,7 +225,7 @@ LOJA_CEP_NULO = cupom.Loja(NOME_LOJA, ENDERECO_CEP_NULO, TELEFONE, OBSERVACAO,
                            CNPJ, INSCRICAO_ESTADUAL)
 
 ENDERECO_CEP_VAZIO = cupom.Endereco(LOGRADOURO, NUMERO, COMPLEMENTO, BAIRRO,
-                                   MUNICIPIO, ESTADO, "")
+                                    MUNICIPIO, ESTADO, "")
 
 LOJA_CEP_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_CEP_VAZIO, TELEFONE,
                             OBSERVACAO, CNPJ, INSCRICAO_ESTADUAL)
@@ -245,7 +247,7 @@ def test_valida_cep():
 LOJA_TELEFONE_NULO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLETO, None, OBSERVACAO,
                                 CNPJ, INSCRICAO_ESTADUAL)
 LOJA_TELEFONE_VAZIO = cupom.Loja(NOME_LOJA, ENDERECO_COMPLETO, "", OBSERVACAO,
-                                CNPJ, INSCRICAO_ESTADUAL)
+                                 CNPJ, INSCRICAO_ESTADUAL)
 
 TEXTO_ESPERADO_SEM_TELEFONE = """Loja 1
 Log 1, 10 C1
@@ -263,7 +265,7 @@ def test_sem_telefone():
 
 LOJA_OBSERVACAO_NULA = cupom.Loja(NOME_LOJA, ENDERECO_COMPLETO, TELEFONE, None,
                                   CNPJ, INSCRICAO_ESTADUAL)
-LOJA_OBSERVACAO_VAZIA = cupom.Loja(NOME_LOJA, ENDERECO_COMPLETO, TELEFONE, "", 
+LOJA_OBSERVACAO_VAZIA = cupom.Loja(NOME_LOJA, ENDERECO_COMPLETO, TELEFONE, "",
                                    CNPJ, INSCRICAO_ESTADUAL)
 
 TEXTO_ESPERADO_SEM_OBSERVACAO = """Loja 1
@@ -305,8 +307,9 @@ def test_valida_inscricao_estadual():
     verifica_campo_obrigatorio_objeto(
         "O campo inscrição estadual da loja é obrigatório", LOJA_IE_VAZIA)
 
+
 ENDERECO_SEM_NUMERO_SEM_COMPLEMENTO = cupom.Endereco(LOGRADOURO, 0, None, BAIRRO,
-                                   MUNICIPIO, ESTADO, CEP)
+                                                     MUNICIPIO, ESTADO, CEP)
 
 LOJA_SEM_NUMERO_SEM_COMPLEMENTO = cupom.Loja(NOME_LOJA, ENDERECO_SEM_NUMERO_SEM_COMPLEMENTO,
                                              TELEFONE, OBSERVACAO, CNPJ,
@@ -322,15 +325,16 @@ IE: 123456789'''
 
 
 def test_valida_numero_e_complemento():
-    assert LOJA_SEM_NUMERO_SEM_COMPLEMENTO.dados_loja() == TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO
+    assert LOJA_SEM_NUMERO_SEM_COMPLEMENTO.dados_loja(
+    ) == TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO
 
 
 ENDERECO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO = cupom.Endereco(LOGRADOURO, 0, None, None,
-                                   MUNICIPIO, ESTADO, CEP)
-LOJA_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO = cupom.Loja(NOME_LOJA, 
-                                                        ENDERECO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO, 
+                                                                MUNICIPIO, ESTADO, CEP)
+LOJA_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO = cupom.Loja(NOME_LOJA,
+                                                        ENDERECO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO,
                                                         TELEFONE, OBSERVACAO,
-                                                        CNPJ, 
+                                                        CNPJ,
                                                         INSCRICAO_ESTADUAL)
 
 TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO = '''Loja 1
@@ -343,30 +347,38 @@ IE: 123456789'''
 
 
 def test_valida_numero_complemento_e_bairro():
-    assert LOJA_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO.dados_loja() == TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO
+    assert LOJA_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO.dados_loja(
+    ) == TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO
 
 
 def test_exercicio2_customizado():
 
     # Defina seus próprios valores para as variáveis a seguir
-    nome_loja = ""
-    logradouro = ""
-    numero = 0
-    complemento = ""
-    bairro = ""
-    municipio = ""
-    estado = ""
-    cep = ""
-    telefone = ""
-    observacao = ""
-    cnpj = ""
-    inscricao_estadual = ""
+    nome_loja = "Top 10 nomes de lojas"
+    logradouro = "Rua Tchurusbango Tchurusmago"
+    numero = 13
+    complemento = "Do lado da casa vizinha"
+    bairro = "Bairro do Limoeiro"
+    municipio = "São Paulo"
+    estado = "SP"
+    cep = "08090-284"
+    telefone = "(11) 4002-8922"
+    observacao = "Entre o Campinho e a Lua de Baixo"
+    cnpj = "43.745.249/0001-39"
+    inscricao_estadual = "564.213.199.866"
+
+    expected = "Top 10 nomes de lojas\n"
+    expected += "Rua Tchurusbango Tchurusmago, 13 Do lado da casa vizinha\n"
+    expected += "Bairro do Limoeiro - São Paulo - SP\n"
+    expected += "CEP:08090-284 Tel (11) 4002-8922\n"
+    expected += "Entre o Campinho e a Lua de Baixo\n"
+    expected += "CNPJ: 43.745.249/0001-39\n"
+    expected += "IE: 564.213.199.866"
 
     endereco_customizado = cupom.Endereco(logradouro, numero, complemento,
-                                 bairro, municipio, estado, cep)
+                                          bairro, municipio, estado, cep)
     loja_customizada = cupom.Loja(nome_loja, endereco_customizado, telefone,
-                                 observacao, cnpj, inscricao_estadual)
+                                  observacao, cnpj, inscricao_estadual)
 
     # E atualize o texto esperado abaixo
-    assert (loja_customizada.dados_loja() == """
-""")
+    assert (loja_customizada.dados_loja() == expected)
